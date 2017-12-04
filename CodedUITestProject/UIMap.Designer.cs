@@ -120,6 +120,40 @@ namespace CodedUITestProject
             Assert.AreEqual(this.ResultSubstarctAssertEqualMethodExpectedValues.UIItem17TextDisplayText, uIItem17Text.DisplayText);
         }
         
+        /// <summary>
+        /// Проверка умножения
+        /// </summary>
+        public void ResultMultiplicateRecordedMethod()
+        {
+            #region Variable Declarations
+            WinEdit uIValueOneTextBoxEdit = this.UICalcWindow.UIValueOneTextBoxWindow.UIValueOneTextBoxEdit;
+            WinEdit uIValueTwoTextBoxEdit = this.UICalcWindow.UIValueTwoTextBoxWindow.UIValueTwoTextBoxEdit;
+            WinButton uIItemButton = this.UICalcWindow.UIItemWindow2.UIItemButton;
+            #endregion
+
+            // Тип "40" в "valueOneTextBox" надпись
+            uIValueOneTextBoxEdit.Text = this.ResultMultiplicateRecordedMethodParams.UIValueOneTextBoxEditText;
+
+            // Тип "10" в "valueTwoTextBox" надпись
+            uIValueTwoTextBoxEdit.Text = this.ResultMultiplicateRecordedMethodParams.UIValueTwoTextBoxEditText;
+
+            // Щелкните "*" кнопка
+            Mouse.Click(uIItemButton, new Point(22, 19));
+        }
+        
+        /// <summary>
+        /// ResultMultiplicateAssertMethod - Используйте "ResultMultiplicateAssertMethodExpectedValues" для передачи параметров в этот метод.
+        /// </summary>
+        public void ResultMultiplicateAssertMethod()
+        {
+            #region Variable Declarations
+            WinText uIItem400Text = this.UICalcWindow.UIItem35Window.UIItem400Text;
+            #endregion
+
+            // Убедитесь, что свойство DisplayText "400" надпись равняется "400"
+            Assert.AreEqual(this.ResultMultiplicateAssertMethodExpectedValues.UIItem400TextDisplayText, uIItem400Text.DisplayText, "Результат не соответствует требуемому");
+        }
+        
         #region Properties
         public virtual StartAppRecordedMethodParams StartAppRecordedMethodParams
         {
@@ -181,6 +215,30 @@ namespace CodedUITestProject
             }
         }
         
+        public virtual ResultMultiplicateRecordedMethodParams ResultMultiplicateRecordedMethodParams
+        {
+            get
+            {
+                if ((this.mResultMultiplicateRecordedMethodParams == null))
+                {
+                    this.mResultMultiplicateRecordedMethodParams = new ResultMultiplicateRecordedMethodParams();
+                }
+                return this.mResultMultiplicateRecordedMethodParams;
+            }
+        }
+        
+        public virtual ResultMultiplicateAssertMethodExpectedValues ResultMultiplicateAssertMethodExpectedValues
+        {
+            get
+            {
+                if ((this.mResultMultiplicateAssertMethodExpectedValues == null))
+                {
+                    this.mResultMultiplicateAssertMethodExpectedValues = new ResultMultiplicateAssertMethodExpectedValues();
+                }
+                return this.mResultMultiplicateAssertMethodExpectedValues;
+            }
+        }
+        
         public UICalcWindow UICalcWindow
         {
             get
@@ -205,6 +263,10 @@ namespace CodedUITestProject
         
         private ResultSubstarctAssertEqualMethodExpectedValues mResultSubstarctAssertEqualMethodExpectedValues;
         
+        private ResultMultiplicateRecordedMethodParams mResultMultiplicateRecordedMethodParams;
+        
+        private ResultMultiplicateAssertMethodExpectedValues mResultMultiplicateAssertMethodExpectedValues;
+        
         private UICalcWindow mUICalcWindow;
         #endregion
     }
@@ -215,13 +277,16 @@ namespace CodedUITestProject
     [GeneratedCode("Построитель кодированных тестов ИП", "14.0.23107.0")]
     public class StartAppRecordedMethodParams
     {
-        
+
         #region Fields
         /// <summary>
         /// Запуск "%USERPROFILE%\Desktop\Calc.exe"
         /// </summary>
-        public string ExePath = "C:\\Users\\soa2\\Desktop\\Calc.exe";
-        
+        //public string ExePath = "C:\\Users\\soa2\\Desktop\\Calc.exe";
+        //C:\Users\soa2\Documents\Visual Studio 2015\Projects\Calc\Calc\bin\Debug
+        //C:\Users\soa2\Desktop\Тест
+        public string ExePath = "C:\\Users\\soa2\\Desktop\\Тест\\Calc.exe";
+
         /// <summary>
         /// Запуск "%USERPROFILE%\Desktop\Calc.exe"
         /// </summary>
@@ -296,6 +361,41 @@ namespace CodedUITestProject
         /// Убедитесь, что свойство DisplayText "17" надпись равняется "17"
         /// </summary>
         public string UIItem17TextDisplayText = "17";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Параметры для передачи в "ResultMultiplicateRecordedMethod"
+    /// </summary>
+    [GeneratedCode("Построитель кодированных тестов ИП", "14.0.23107.0")]
+    public class ResultMultiplicateRecordedMethodParams
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Тип "40" в "valueOneTextBox" надпись
+        /// </summary>
+        public string UIValueOneTextBoxEditText = "40";
+        
+        /// <summary>
+        /// Тип "10" в "valueTwoTextBox" надпись
+        /// </summary>
+        public string UIValueTwoTextBoxEditText = "10";
+        #endregion
+    }
+    
+    /// <summary>
+    /// Параметры для передачи в "ResultMultiplicateAssertMethod"
+    /// </summary>
+    [GeneratedCode("Построитель кодированных тестов ИП", "14.0.23107.0")]
+    public class ResultMultiplicateAssertMethodExpectedValues
+    {
+        
+        #region Fields
+        /// <summary>
+        /// Убедитесь, что свойство DisplayText "400" надпись равняется "400"
+        /// </summary>
+        public string UIItem400TextDisplayText = "400";
         #endregion
     }
     
@@ -384,6 +484,18 @@ namespace CodedUITestProject
                 return this.mUIItemWindow1;
             }
         }
+        
+        public UIItemWindow2 UIItemWindow2
+        {
+            get
+            {
+                if ((this.mUIItemWindow2 == null))
+                {
+                    this.mUIItemWindow2 = new UIItemWindow2(this);
+                }
+                return this.mUIItemWindow2;
+            }
+        }
         #endregion
         
         #region Fields
@@ -398,6 +510,8 @@ namespace CodedUITestProject
         private UIItem35Window mUIItem35Window;
         
         private UIItemWindow1 mUIItemWindow1;
+        
+        private UIItemWindow2 mUIItemWindow2;
         #endregion
     }
     
@@ -587,12 +701,30 @@ namespace CodedUITestProject
                 return this.mUIItem17Text;
             }
         }
+        
+        public WinText UIItem400Text
+        {
+            get
+            {
+                if ((this.mUIItem400Text == null))
+                {
+                    this.mUIItem400Text = new WinText(this);
+                    #region Условия поиска
+                    this.mUIItem400Text.SearchProperties[WinText.PropertyNames.Name] = "400";
+                    this.mUIItem400Text.WindowTitles.Add("Calc");
+                    #endregion
+                }
+                return this.mUIItem400Text;
+            }
+        }
         #endregion
         
         #region Fields
         private WinText mUIItem35Text;
         
         private WinText mUIItem17Text;
+        
+        private WinText mUIItem400Text;
         #endregion
     }
     
@@ -619,6 +751,42 @@ namespace CodedUITestProject
                     this.mUIItemButton = new WinButton(this);
                     #region Условия поиска
                     this.mUIItemButton.SearchProperties[WinButton.PropertyNames.Name] = "-";
+                    this.mUIItemButton.WindowTitles.Add("Calc");
+                    #endregion
+                }
+                return this.mUIItemButton;
+            }
+        }
+        #endregion
+        
+        #region Fields
+        private WinButton mUIItemButton;
+        #endregion
+    }
+    
+    [GeneratedCode("Построитель кодированных тестов ИП", "14.0.23107.0")]
+    public class UIItemWindow2 : WinWindow
+    {
+        
+        public UIItemWindow2(UITestControl searchLimitContainer) : 
+                base(searchLimitContainer)
+        {
+            #region Условия поиска
+            this.SearchProperties[WinWindow.PropertyNames.ControlName] = "multiplicationButton";
+            this.WindowTitles.Add("Calc");
+            #endregion
+        }
+        
+        #region Properties
+        public WinButton UIItemButton
+        {
+            get
+            {
+                if ((this.mUIItemButton == null))
+                {
+                    this.mUIItemButton = new WinButton(this);
+                    #region Условия поиска
+                    this.mUIItemButton.SearchProperties[WinButton.PropertyNames.Name] = "*";
                     this.mUIItemButton.WindowTitles.Add("Calc");
                     #endregion
                 }

@@ -163,6 +163,51 @@
       <WorkItemId>0</WorkItemId>
       <MarkerRegionType>Assertion</MarkerRegionType>
     </TestStepMarkerAction>
+    <SetValueAction UIObjectName="UIMap.UICalcWindow.UIValueOneTextBoxWindow.UIValueOneTextBoxEdit">
+      <ParameterName />
+      <Value Encoded="false">40</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <SetValueAction UIObjectName="UIMap.UICalcWindow.UIValueTwoTextBoxWindow.UIValueTwoTextBoxEdit">
+      <ParameterName />
+      <Value Encoded="false">10</Value>
+      <Type>String</Type>
+    </SetValueAction>
+    <MouseAction UIObjectName="UIMap.UICalcWindow.UIItemWindow2.UIItemButton">
+      <ParameterName />
+      <ModifierKeys>None</ModifierKeys>
+      <IsGlobalHotkey>false</IsGlobalHotkey>
+      <Location X="22" Y="19" />
+      <WheelDirection>0</WheelDirection>
+      <ActionType>Click</ActionType>
+      <MouseButton>Left</MouseButton>
+    </MouseAction>
+    <TestStepMarkerAction Comment="Проверка умножения" MarkerInformation="ResultMultiplicateRecordedMethod">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Action</MarkerRegionType>
+    </TestStepMarkerAction>
+    <AssertAction UIObjectName="UIMap.UICalcWindow.UIItem35Window.UIItem400Text">
+      <ParameterName />
+      <PropertyName>DisplayText</PropertyName>
+      <ExpectedValue>400</ExpectedValue>
+      <MessageOnValidationFailure>Результат не соответствует требуемому</MessageOnValidationFailure>
+      <Type>String</Type>
+      <PropertyCondition>AreEqual</PropertyCondition>
+    </AssertAction>
+    <TestStepMarkerAction Comment="" MarkerInformation="ResultMultiplicateAssertMethod">
+      <ParameterName />
+      <StepId>-1</StepId>
+      <Direction>Start</Direction>
+      <Outcome />
+      <Disabled>false</Disabled>
+      <WorkItemId>0</WorkItemId>
+      <MarkerRegionType>Assertion</MarkerRegionType>
+    </TestStepMarkerAction>
   </ExecuteActions>
   <CleanupActions />
   <OnErrorActions />
@@ -349,6 +394,21 @@
                   <SupportLevel>100</SupportLevel>
                   <Descendants />
                 </UIObject>
+                <UIObject ControlType="Text" Id="UIItem400Text" FriendlyName="400" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Calc</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">400</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Text</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>100</SupportLevel>
+                  <Descendants />
+                </UIObject>
               </Descendants>
             </UIObject>
             <UIObject ControlType="Window" Id="UIItemWindow1" FriendlyName="-" SpecialControlType="None">
@@ -375,6 +435,37 @@
                   </SearchConfigurations>
                   <AndCondition Id="SearchCondition">
                     <PropertyCondition Name="Name">-</PropertyCondition>
+                    <PropertyCondition Name="ControlType">Button</PropertyCondition>
+                  </AndCondition>
+                  <SupportLevel>0</SupportLevel>
+                  <Descendants />
+                </UIObject>
+              </Descendants>
+            </UIObject>
+            <UIObject ControlType="Window" Id="UIItemWindow2" FriendlyName="*" SpecialControlType="None">
+              <TechnologyName>MSAA</TechnologyName>
+              <WindowTitles>
+                <WindowTitle>Calc</WindowTitle>
+              </WindowTitles>
+              <SearchConfigurations>
+                <SearchConfiguration>VisibleOnly</SearchConfiguration>
+              </SearchConfigurations>
+              <AndCondition Id="SearchCondition">
+                <PropertyCondition Name="ControlName">multiplicationButton</PropertyCondition>
+                <PropertyCondition Name="ControlType">Window</PropertyCondition>
+              </AndCondition>
+              <SupportLevel>0</SupportLevel>
+              <Descendants>
+                <UIObject ControlType="Button" Id="UIItemButton" FriendlyName="*" SpecialControlType="None">
+                  <TechnologyName>MSAA</TechnologyName>
+                  <WindowTitles>
+                    <WindowTitle>Calc</WindowTitle>
+                  </WindowTitles>
+                  <SearchConfigurations>
+                    <SearchConfiguration>VisibleOnly</SearchConfiguration>
+                  </SearchConfigurations>
+                  <AndCondition Id="SearchCondition">
+                    <PropertyCondition Name="Name">*</PropertyCondition>
                     <PropertyCondition Name="ControlType">Button</PropertyCondition>
                   </AndCondition>
                   <SupportLevel>0</SupportLevel>

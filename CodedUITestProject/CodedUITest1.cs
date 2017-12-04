@@ -55,6 +55,15 @@ namespace CodedUITestProject
             this.UIMap.ResultSubstarctAssertEqualMethod();
         }
 
+        [TestMethod]
+        public void UiMultiplicationTestMethod()
+        {
+
+            this.UIMap.ResultMultiplicateRecordedMethod();
+            this.UIMap.ResultMultiplicateAssertMethod();
+
+        }
+
         //[TestMethod]
         public void CodedUITestMethod1()
         {
